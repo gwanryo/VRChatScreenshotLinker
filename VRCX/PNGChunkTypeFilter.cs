@@ -1,12 +1,11 @@
-﻿namespace VRCX
+﻿namespace VRCX;
+
+public enum PNGChunkTypeFilter
 {
-    public enum PNGChunkTypeFilter
-    {
-        UNKNOWN,
-        IHDR,
-        sRGB,
-        iTXt,
-        IDAT,
-        IEND
-    }
+    UNKNOWN,
+    IHDR,
+    sRGB,
+    iTXt,
+    IDAT,
+    IEND
 }
