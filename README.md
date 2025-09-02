@@ -3,7 +3,6 @@
 ![Sample Screenshot](./sample/sample.gif)
 
 A simple tool to generate direct links to VRChat World based on VRChat screenshots.
-Note: This tool only works with screenshots taken in VRChat, when using VRCX.
 
 ## Features
 
@@ -20,3 +19,19 @@ Note: This tool only works with screenshots taken in VRChat, when using VRCX.
 2. Run the application.
 3. Drag and drop a VRChat screenshot onto the application window.
 4. The application will display the parsed information and generate a direct link to the VRChat world.
+
+## Limitations
+
+- This tool only works with screenshots taken in VRChat, when using VRCX.
+
+## Acknowledgements
+
+- [VRCX](https://github.com/vrcx-team/VRCX) - The tool that makes this possible.
+
+## License
+
+This project is licensed under the Unlicense - see the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+For any inquiries or feedback, please reach out to [issues](https://github.com/gwarnryo/VRChatScreenshotLinker/issues).
