@@ -1,0 +1,62 @@
+﻿<Window x:Class="VRChatScreenshotLinker.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="VRChat Screenshot Linker"
+        Height="300" Width="500"
+        Icon="icon.ico"
+        WindowStartupLocation="CenterScreen" Topmost="True" ResizeMode="NoResize">
+    <Grid Margin="20">
+        <Border x:Name="DropZoneBorder"
+                BorderThickness="2"
+                CornerRadius="10"
+                AllowDrop="True"
+                Drop="DropZone_Drop"
+                DragEnter="DropZone_DragEnter"
+                DragLeave="DropZone_DragLeave">
+
+            <DockPanel>
+                <TextBlock DockPanel.Dock="Top"
+                           Text="여기에 VRChat 스크린샷 PNG를 드래그 앤 드롭하세요"
+                           FontSize="16"
+                           TextAlignment="Center"
+                           Margin="0,0,0,10"/>
+
+                <StackPanel>
+                    <GroupBox Header="스크린샷 정보" Padding="0,5,0,0">
+                        <DataGrid x:Name="MetadataGrid"
+                                  AutoGenerateColumns="False"
+                                  CanUserAddRows="False"
+                                  CanUserDeleteRows="False"
+                                  HeadersVisibility="Column"
+                                  IsReadOnly="True"
+                                  Height="145"
+                                  ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                                  ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                                  HorizontalScrollBarVisibility="Disabled"
+                                  VerticalScrollBarVisibility="Disabled"
+                                  ScrollViewer.CanContentScroll="False" CanUserSortColumns="False">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="키" Binding="{Binding Key}" Width="100"/>
+                                <DataGridTextColumn Header="값" Binding="{Binding Value}" Width="*"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </GroupBox>
+
+                    <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                        <CheckBox x:Name="OpenBrowserCheckBox" 
+                                  Content="찾은 월드 링크 브라우저로 열기" 
+                                  IsChecked="True" 
+                                  VerticalAlignment="Center"
+                                  Click="OpenBrowserCheckBox_Click"/>
+                        <CheckBox x:Name="TopmostCheckBox"
+                                  Content="항상 위"
+                                  IsChecked="True"
+                                  Margin="15,0,0,0"
+                                  VerticalAlignment="Center"
+                                  Click="TopmostCheckBox_Click"/>
+                    </StackPanel>
+                </StackPanel>
+            </DockPanel>
+        </Border>
+    </Grid>
+</Window>
